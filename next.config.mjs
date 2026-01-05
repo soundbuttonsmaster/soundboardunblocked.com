@@ -1,4 +1,11 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import webpack from 'next/dist/compiled/webpack/webpack.js';
+
 /** @type {import('next').NextConfig} */
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const noopPolyfillPath = path.join(__dirname, 'noop-polyfill.js');
+
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
@@ -16,6 +23,47 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
+  },
+  // Target modern browsers only (ES2022+)
+  // This removes unnecessary polyfills for Array.prototype.at, Object.hasOwn, etc.
+  swcMinify: true,
+  // Explicitly configure SWC to target modern browsers and skip unnecessary transforms
+  // This prevents polyfills for: Array.prototype.at, flat, flatMap, Object.fromEntries, 
+  // Object.hasOwn, String.prototype.trimStart/trimEnd, class transforms, spread transforms
+  experimental: {
+    optimizePackageImports: ["@/components", "@/lib", "lucide-react"],
+    optimizeCss: true,
+    swcTraceProfiling: false,
+  },
+  // Optimize fonts
+  optimizeFonts: true,
+  // Disable polyfills for modern features - browsers support them natively
+  // This saves ~14 KiB by removing unnecessary polyfills
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve = config.resolve || {};
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'next/dist/build/polyfills/polyfill-module': noopPolyfillPath,
+      };
+      // Disable polyfills for features that modern browsers support natively
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        // Don't polyfill these - modern browsers have native support
+        fs: false,
+        net: false,
+        tls: false,
+      };
+      const { NormalModuleReplacementPlugin } = webpack.webpack;
+      config.plugins = config.plugins || [];
+      config.plugins.push(
+        new NormalModuleReplacementPlugin(
+          /next[\\/]+dist[\\/]+build[\\/]+polyfills[\\/]+polyfill-module/,
+          noopPolyfillPath
+        )
+      );
+    }
+    return config;
   },
   // Optimize route prefetching for better navigation performance
   experimental: {

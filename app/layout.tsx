@@ -79,6 +79,7 @@ export default function RootLayout({
               *{border-color:var(--border);outline-color:var(--ring)}
               body{background-color:var(--background);color:var(--foreground);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;-webkit-font-smoothing:antialiased;font-size:14px}
               h1,h2,h3,h4,h5,h6{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
+              h1.text-balance{min-height:28px;display:block}
             `,
           }}
         />
@@ -100,13 +101,26 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="soundboardunblocked" />
       </head>
       <body className="antialiased">
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-9CLG9GS1LT" />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script 
+          strategy="afterInteractive" 
+          src="https://www.googletagmanager.com/gtag/js?id=G-9CLG9GS1LT"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-9CLG9GS1LT');
+            gtag('config', 'G-9CLG9GS1LT', {
+              send_page_view: false
+            });
+            // Defer page view until after initial load to reduce blocking
+            if (document.readyState === 'complete') {
+              gtag('event', 'page_view');
+            } else {
+              window.addEventListener('load', function() {
+                gtag('event', 'page_view');
+              });
+            }
           `}
         </Script>
 

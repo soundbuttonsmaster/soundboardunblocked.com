@@ -139,6 +139,7 @@ export default function HomePage({
             <h1
               className="text-balance text-xl font-bold text-slate-900 dark:text-white md:text-2xl"
               style={{ minHeight: "28px" }}
+              style={{ minHeight: "28px" }}
             >
               {dict.home.title}
             </h1>
