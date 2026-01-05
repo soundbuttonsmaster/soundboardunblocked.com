@@ -676,33 +676,87 @@ export default function SoundDetailClient({
               </div>
 
               {/* Related sounds grid */}
-              <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-11">
-                {relatedSounds.slice(0, 22).map((relatedSound) => (
-                  <SoundButton
-                    key={relatedSound.id}
-                    sound={relatedSound}
-                    lang={lang}
-                    className="min-w-0"
-                    onShareClick={() => handleShareClick(relatedSound)}
-                  />
-                ))}
-              </div>
-
-              {relatedSounds.length > 22 && (
-                <div className="mt-2 flex justify-center">
-                  <div className="grid grid-cols-3 gap-2 sm:grid-cols-3 md:grid-cols-7">
-                    {relatedSounds.slice(22, 29).map((relatedSound) => (
-                      <SoundButton
-                        key={relatedSound.id}
-                        sound={relatedSound}
-                        lang={lang}
-                        className="min-w-0"
-                        onShareClick={() => handleShareClick(relatedSound)}
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
+              {(() => {
+                const firstBatch = relatedSounds.slice(0, 20);
+                const secondBatch = relatedSounds.slice(20, 27);
+                const soundsPerRow = 10; // Desktop: 10 sounds per row
+                
+                // Split first batch into rows
+                const firstRows: typeof firstBatch[] = [];
+                for (let i = 0; i < firstBatch.length; i += soundsPerRow) {
+                  firstRows.push(firstBatch.slice(i, i + soundsPerRow));
+                }
+                
+                return (
+                  <>
+                    {firstRows.map((rowSounds, rowIndex) => {
+                      const isLastRow = rowIndex === firstRows.length - 1 && secondBatch.length === 0;
+                      const lastRowItemCount = rowSounds.length;
+                      const shouldCenter = isLastRow && lastRowItemCount >= 2 && lastRowItemCount <= 3;
+                      
+                      return (
+                        <div key={rowIndex} className={rowIndex > 0 ? "mt-2" : ""}>
+                          <div
+                            className={`grid grid-cols-3 sm:grid-cols-3 md:grid-cols-8 lg:grid-cols-9 xl:grid-cols-10 ${
+                              shouldCenter ? "xl:mx-auto xl:w-fit" : ""
+                            }`}
+                            style={{
+                              ...(shouldCenter
+                                ? {
+                                    gridTemplateColumns: `repeat(${lastRowItemCount}, minmax(0, 1fr))`,
+                                  }
+                                : {}),
+                              gap: "1.5rem", // 24px gap
+                              display: "grid",
+                            }}
+                          >
+                            {rowSounds.map((relatedSound) => (
+                              <SoundButton
+                                key={relatedSound.id}
+                                sound={relatedSound}
+                                lang={lang}
+                                className="min-w-0"
+                                onShareClick={() => handleShareClick(relatedSound)}
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                    
+                    {secondBatch.length > 0 && (
+                      <div className="mt-2 flex justify-center">
+                        <div
+                          className={`grid grid-cols-3 sm:grid-cols-3 md:grid-cols-7 ${
+                            secondBatch.length >= 2 && secondBatch.length <= 3
+                              ? "md:mx-auto md:w-fit"
+                              : ""
+                          }`}
+                          style={{
+                            ...(secondBatch.length >= 2 && secondBatch.length <= 3
+                              ? {
+                                  gridTemplateColumns: `repeat(${secondBatch.length}, minmax(0, 1fr))`,
+                                }
+                              : {}),
+                            gap: "1.5rem", // 24px gap
+                            display: "grid",
+                          }}
+                        >
+                          {secondBatch.map((relatedSound) => (
+                            <SoundButton
+                              key={relatedSound.id}
+                              sound={relatedSound}
+                              lang={lang}
+                              className="min-w-0"
+                              onShareClick={() => handleShareClick(relatedSound)}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </>
+                );
+              })()}
 
               <hr className="my-8 border-slate-300 dark:border-slate-700" />
 

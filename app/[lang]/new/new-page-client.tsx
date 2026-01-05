@@ -15,7 +15,7 @@ interface Props {
 }
 
 export default function NewPageClient({ sounds, lang, dict }: Props) {
-  const SOUNDS_PER_PAGE = 51 // 4 rows x 11 sounds + 1 row x 7 centered sounds
+  const SOUNDS_PER_PAGE = 40 // 4 rows x 10 sounds per row
   const [displayCount, setDisplayCount] = useState(SOUNDS_PER_PAGE)
   const [isShareDialogOpen, setIsShareDialogOpen] = useState(false)
   const [shareUrl, setShareUrl] = useState("")
@@ -52,8 +52,11 @@ export default function NewPageClient({ sounds, lang, dict }: Props) {
     setDisplayCount((prev) => Math.min(prev + SOUNDS_PER_PAGE, sounds.length))
   }
 
-  const shouldCenterLastRow =
-    displayedSounds.length % 51 === 0 || (displayedSounds.length > 44 && (displayedSounds.length - 44) % 51 === 7)
+  // Calculate if last row should be centered (2-3 items or 7-9 items)
+  const soundsPerRow = 10 // Desktop: 10 sounds per row
+  const totalRows = Math.ceil(displayedSounds.length / soundsPerRow)
+  const lastRowItemCount = displayedSounds.length % soundsPerRow || soundsPerRow
+  const shouldCenterLastRow = (lastRowItemCount >= 2 && lastRowItemCount <= 3) || (lastRowItemCount >= 7 && lastRowItemCount <= 9)
 
   return (
     <>
@@ -74,6 +77,7 @@ export default function NewPageClient({ sounds, lang, dict }: Props) {
           sounds={displayedSounds}
           lang={lang}
           centerLastRow={shouldCenterLastRow}
+          desktopCols={10}
           onShareClick={handleShareClick}
           setMessageContent={setMessageContent}
           setShowMessage={setShowMessage}

@@ -135,6 +135,8 @@ export default function CategoryDetailClient({
             <SoundGrid
               sounds={sounds}
               lang={lang}
+              centerLastRow={true}
+              desktopCols={10}
               onShareClick={handleShareClick}
               setMessageContent={setMessageContent}
               setShowMessage={setShowMessage}

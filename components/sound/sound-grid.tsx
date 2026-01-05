@@ -64,22 +64,43 @@ export default function SoundGrid({
     <div className="space-y-4">
       {rows.map((rowSounds, rowIndex) => {
         const isLastRow = rowIndex === rows.length - 1;
+        const lastRowItemCount = rowSounds.length;
+        // Center last row if it has 2-3 items (or 7-9 for specific layouts)
         const shouldCenter =
-          !isMobile && centerLastRow && isLastRow && rowSounds.length === 9;
+          !isMobile &&
+          centerLastRow &&
+          isLastRow &&
+          ((lastRowItemCount >= 2 && lastRowItemCount <= 3) ||
+            (lastRowItemCount >= 7 && lastRowItemCount <= 9));
 
         return (
           <div key={rowIndex}>
             <div
-              className={`grid gap-2 ${
+              className={`grid ${
                 shouldCenter
-                  ? // Center 9 sounds on desktop only
-                    "grid-cols-9 mx-auto w-fit"
+                  ? // Center last row with 2-3 items (or 7-9) on desktop
+                    isMobile
+                    ? "grid-cols-3"
+                    : "mx-auto w-fit"
                   : isMobile
                   ? // Mobile: Fixed 3 columns always
                     "grid-cols-3"
-                  : // Desktop: Dynamic columns
-                    `grid-cols-${desktopCols}`
+                  : // Desktop: Use inline style for dynamic columns
+                    ""
               }`}
+              style={{
+                ...(!isMobile
+                  ? shouldCenter
+                    ? {
+                        gridTemplateColumns: `repeat(${lastRowItemCount}, minmax(0, 1fr))`,
+                      }
+                    : {
+                        gridTemplateColumns: `repeat(${desktopCols}, minmax(0, 1fr))`,
+                      }
+                  : {}),
+                gap: isMobile ? "1rem" : "1.5rem", // 24px gap for desktop
+                display: "grid", // Ensure grid display
+              }}
             >
               {rowSounds.map((sound) => (
                 <SoundButton

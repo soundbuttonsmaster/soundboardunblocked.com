@@ -182,7 +182,7 @@ const SoundButton = memo(function SoundButton({
   };
 
   return (
-    <div className={cn("flex flex-col text-center", className)}>
+    <div className={cn("flex flex-col text-center items-center", className)}>
       {/* Button section - centered */}
       <div className="flex items-center justify-center py-1 flex-shrink-0">
         <div

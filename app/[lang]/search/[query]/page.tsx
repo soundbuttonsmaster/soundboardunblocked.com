@@ -237,15 +237,56 @@ export default async function SearchPage({ params }: Props) {
 
           {/* Search Results Grid */}
           {sounds.length > 0 && (
-            <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
-              {sounds.map((sound) => (
-                <SoundButton
-                  key={sound.id}
-                  sound={sound}
-                  lang={lang}
-                  showCategory
-                />
-              ))}
+            <div className="space-y-4">
+              {(() => {
+                const soundsPerRow = 6; // Desktop: 6 sounds per row
+                const rows: typeof sounds[] = [];
+                
+                // Split sounds into rows
+                for (let i = 0; i < sounds.length; i += soundsPerRow) {
+                  rows.push(sounds.slice(i, i + soundsPerRow));
+                }
+                
+                return rows.map((rowSounds, rowIndex) => {
+                  const isLastRow = rowIndex === rows.length - 1;
+                  const lastRowItemCount = rowSounds.length;
+                  const shouldCenter = isLastRow && lastRowItemCount >= 2 && lastRowItemCount <= 3;
+                  
+                  return (
+                    <div key={rowIndex}>
+                      <div
+                        className={`grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 ${
+                          shouldCenter ? "lg:justify-center" : ""
+                        }`}
+                        style={{
+                          ...(shouldCenter
+                            ? {
+                                gridTemplateColumns: `repeat(${lastRowItemCount}, auto)`,
+                                maxWidth: "fit-content",
+                                marginLeft: "auto",
+                                marginRight: "auto",
+                              }
+                            : {}),
+                          gap: "1.5rem", // 24px gap
+                          display: "grid",
+                        }}
+                      >
+                        {rowSounds.map((sound) => (
+                          <SoundButton
+                            key={sound.id}
+                            sound={sound}
+                            lang={lang}
+                            showCategory
+                          />
+                        ))}
+                      </div>
+                      {rowIndex < rows.length - 1 && (
+                        <hr className="mt-4 border-t border-slate-200 dark:border-slate-700" />
+                      )}
+                    </div>
+                  );
+                });
+              })()}
             </div>
           )}
         </div>

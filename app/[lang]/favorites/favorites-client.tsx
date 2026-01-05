@@ -80,5 +80,16 @@ export default function FavoritesClient({ lang, dict }: Props) {
     )
   }
 
-  return <SoundGrid sounds={sounds} lang={lang} />
+  return (
+    <SoundGrid
+      sounds={sounds}
+      lang={lang}
+      centerLastRow={true}
+      desktopCols={10}
+      onShareClick={() => {}}
+      setMessageContent={() => {}}
+      setShowMessage={() => {}}
+      dict={dict}
+    />
+  )
 }

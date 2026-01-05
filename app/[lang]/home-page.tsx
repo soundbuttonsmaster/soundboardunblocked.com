@@ -181,6 +181,7 @@ export default function HomePage({
                 lang={lang}
                 maxMobile={16}
                 centerLastRow={true}
+                desktopCols={10}
                 onShareClick={handleShareClick}
                 setMessageContent={setMessageContent}
                 setShowMessage={setShowMessage}
@@ -230,6 +231,7 @@ export default function HomePage({
                 lang={lang}
                 maxMobile={8}
                 centerLastRow={true}
+                desktopCols={10}
                 onShareClick={handleShareClick}
                 setMessageContent={setMessageContent}
                 setShowMessage={setShowMessage}
