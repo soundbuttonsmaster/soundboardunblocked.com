@@ -1,5 +1,4 @@
-// const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://play.soundboard.cloud/api/soundbuttonsspace.com"
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://play.soundboard.cloud/api/soundboardunblocked.com"
+import { API_BASE_URL } from "./constants"
 
 export interface ApiResponse<T> {
   status: number
