@@ -69,6 +69,7 @@ export async function generateMetadata({
       description,
       images: [ogImageUrl],
       creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: pageUrl,

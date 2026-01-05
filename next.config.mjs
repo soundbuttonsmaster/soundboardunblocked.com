@@ -22,11 +22,13 @@ const nextConfig = {
   turbopack: {},
   async redirects() {
     return [
-      {
-        source: '/ads.txt',
-        destination: 'https://srv.adstxtmanager.com/19390/soundboardunblocked.com',
-        permanent: true,
-      },
+      // ads.txt is now served directly from public/ads.txt
+      // If you need to use the external service, uncomment below:
+      // {
+      //   source: '/ads.txt',
+      //   destination: 'https://srv.adstxtmanager.com/19390/soundboardunblocked.com',
+      //   permanent: true,
+      // },
     ]
   },
   async headers() {

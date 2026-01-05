@@ -163,6 +163,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       images: [ogImageUrl],
       creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: soundUrl,

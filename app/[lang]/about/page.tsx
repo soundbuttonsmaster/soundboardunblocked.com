@@ -36,6 +36,8 @@ export async function generateMetadata({
       description:
         "Learn about SoundBoardUnblocked and our mission to provide the best free meme soundboards and sound effects.",
       images: [`${baseUrl}/og-image.jpg`],
+      creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: `${baseUrl}/${lang}/about`,

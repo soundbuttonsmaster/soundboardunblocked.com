@@ -113,6 +113,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       images: [ogImageUrl],
       creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: pageUrl,
@@ -168,11 +169,34 @@ export default async function TrendingPage({ params }: Props) {
     numberOfItems: sounds.length,
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `https://soundboardunblocked.com/${lang}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Trending Sounds",
+        item: `https://soundboardunblocked.com/${lang}/trending`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <DottedBackground />

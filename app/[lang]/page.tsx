@@ -99,6 +99,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: dict.meta.description,
       images: [ogImageUrl],
       creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: `${siteUrl}/${lang}`,
@@ -118,9 +119,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     verification: {
-      google: "google-site-verification-code",
+      // TODO: Replace with actual Google Search Console verification code
+      google: process.env.GOOGLE_SITE_VERIFICATION || "google-site-verification-code",
       other: {
-        "msvalidate.01": "bing-verification-code",
+        // TODO: Replace with actual Bing Webmaster Tools verification code
+        "msvalidate.01": process.env.BING_VERIFICATION || "bing-verification-code",
       },
     },
   };

@@ -36,6 +36,15 @@ export async function generateMetadata({
         locales.map((locale) => [locale, `${baseUrl}/${locale}/privacy`])
       ),
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "Privacy Policy - SoundBoardUnblocked",
+      description:
+        "Our commitment to protecting your privacy and personal information.",
+      images: [`${baseUrl}/og-image.jpg`],
+      creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
+    },
   };
 }
 

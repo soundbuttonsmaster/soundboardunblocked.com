@@ -282,6 +282,25 @@ export default function SoundDetailClient({
     ],
   };
 
+  const relatedSoundsSchema = relatedSounds.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Related Sounds to ${sound.name}`,
+    description: `Related sound buttons similar to ${sound.name}`,
+    numberOfItems: relatedSounds.length,
+    itemListElement: relatedSounds.slice(0, 10).map((relatedSound, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: relatedSound.name,
+      url: `https://soundboardunblocked.com/${lang}/sound/${relatedSound.name
+        .toLowerCase()
+        .trim()
+        .replace(/[^\w\s-]/g, "")
+        .replace(/[\s_-]+/g, "-")
+        .replace(/^-+|-+$/g, "")}/${relatedSound.id}`,
+    })),
+  } : null;
+
   return (
     <>
       <script
@@ -292,6 +311,12 @@ export default function SoundDetailClient({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {relatedSoundsSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(relatedSoundsSchema) }}
+        />
+      )}
       <ShareDialog
         isOpen={isShareDialogOpen}
         onOpenChange={setIsShareDialogOpen}

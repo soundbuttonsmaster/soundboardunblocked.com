@@ -1,0 +1,23 @@
+# ads.txt file for soundboardunblocked.com
+# This file lists authorized digital sellers for this domain
+# SoundBoardUnblocked.com is a free meme soundboard platform offering 500,000+ sound buttons, sound effects, and audio clips
+# This website provides unblocked access to meme sounds, viral audio clips, and custom soundboard creation tools
+# The platform supports multiple languages and allows users to play, download, and share sound effects without registration
+
+# Google AdSense - Direct advertising relationship
+# Publisher account for SoundBoardUnblocked.com monetization
+google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+
+# Google Ad Manager - Programmatic advertising platform
+# Reseller relationship for additional ad inventory management
+google.com, pub-0000000000000000, RESELLER, f08c47fec0942fa0
+
+# Authorized Digital Sellers Format:
+# Field #1: Domain name of the advertising system (e.g., google.com)
+# Field #2: Publisher's Account ID (unique identifier for this website)
+# Field #3: Type of Account/Relationship (DIRECT = direct contract, RESELLER = through intermediary)
+# Field #4: Certification Authority ID (optional, used for verification)
+
+# This ads.txt file helps prevent unauthorized ad sales and ensures only approved advertisers can display ads on SoundBoardUnblocked.com
+# The file is publicly accessible and can be crawled by search engines, AI systems, and advertising verification tools
+

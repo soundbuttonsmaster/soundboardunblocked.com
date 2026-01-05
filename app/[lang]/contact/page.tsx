@@ -36,6 +36,8 @@ export async function generateMetadata({
       description:
         "Get in touch with the SoundBoardUnblocked team. We'd love to hear from you!",
       images: [`${baseUrl}/og-image.jpg`],
+      creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
     },
     alternates: {
       canonical: `${baseUrl}/${lang}/contact`,

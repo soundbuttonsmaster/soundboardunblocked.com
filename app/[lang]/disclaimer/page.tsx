@@ -35,6 +35,15 @@ export async function generateMetadata({
         locales.map((locale) => [locale, `${baseUrl}/${locale}/disclaimer`])
       ),
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "Disclaimer - SoundBoardUnblocked",
+      description:
+        "Important disclaimer information for SoundBoardUnblocked users.",
+      images: [`${baseUrl}/og-image.jpg`],
+      creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
+    },
   };
 }
 

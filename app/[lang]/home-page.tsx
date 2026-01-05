@@ -87,6 +87,28 @@ export default function HomePage({
     },
   };
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "SoundBoardUnblocked",
+    url: "https://soundboardunblocked.com",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://soundboardunblocked.com/icon-512x512.png",
+      width: 512,
+      height: 512,
+    },
+    description: dict.meta.description,
+    sameAs: [
+      "https://twitter.com/soundboardunblocked",
+    ],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "Customer Service",
+      email: "contact@soundboardunblocked.com",
+    },
+  };
+
   return (
     <>
       <script

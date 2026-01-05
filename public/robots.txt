@@ -1,0 +1,107 @@
+# robots.txt for soundboardunblocked.com
+# This file provides instructions to web crawlers and AI systems about which parts of the site can be accessed
+
+# Allow all crawlers to access public content
+User-agent: *
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Google Search Engine
+User-agent: Googlebot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# OpenAI GPTBot - Allow AI training and indexing
+User-agent: GPTBot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# ChatGPT User Agent
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Common Crawl Bot
+User-agent: CCBot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Applebot
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Omgili Search Engine
+User-agent: Omgilibot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Facebook Crawler
+User-agent: FacebookBot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Bing Search Engine
+User-agent: Bingbot
+Allow: /
+Disallow: /auth-cp/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap locations
+Sitemap: https://soundboardunblocked.com/sitemap.xml
+Sitemap: https://soundboardunblocked.com/sitemap-static.xml
+Sitemap: https://soundboardunblocked.com/sitemap-soundboards.xml
+Sitemap: https://soundboardunblocked.com/sitemap-sounds.xml
+
+# Host information
+Host: https://soundboardunblocked.com
+

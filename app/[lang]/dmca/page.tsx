@@ -35,6 +35,15 @@ export async function generateMetadata({
         locales.map((locale) => [locale, `${baseUrl}/${locale}/dmca`])
       ),
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "DMCA Policy - SoundBoardUnblocked",
+      description:
+        "Our DMCA policy and procedures for handling copyright infringement claims.",
+      images: [`${baseUrl}/og-image.jpg`],
+      creator: "@soundboardunblocked",
+      site: "@soundboardunblocked",
+    },
   };
 }
 
