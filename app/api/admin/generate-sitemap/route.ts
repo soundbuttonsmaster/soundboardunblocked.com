@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     // Revalidate all sitemap routes
     revalidatePath("/sitemap.xml")
     revalidatePath("/sitemap-static.xml")
-    revalidatePath("/sitemap-categories.xml")
+    revalidatePath("/sitemap-soundboards.xml")
     revalidatePath("/sitemap-sounds.xml")
 
     return NextResponse.json({

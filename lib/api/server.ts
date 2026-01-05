@@ -6,7 +6,7 @@
 import { cookies } from "next/headers"
 import ApiClient, { type User } from "./client"
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://192.168.1.96:8051/api/soundboardunblocked.com"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://play.soundboard.cloud/api/soundboardunblocked.com"
 
 /**
  * Get a public API client (no authentication)

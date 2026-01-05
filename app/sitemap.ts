@@ -148,7 +148,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: currentDate,
     },
     {
-      url: `${baseUrl}/sitemap-categories.xml`,
+      url: `${baseUrl}/sitemap-soundboards.xml`,
       lastModified: currentDate,
     },
     {

@@ -17,7 +17,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "soundboardunblocked: Free Meme Soundboard Unblocked",
+  // Title is set by individual pages via generateMetadata to prevent title flashing
+  // Root layout only provides fallback metadata, not specific titles
   description:
     "Discover 500,000+ free sound buttons, meme soundboards, and sound effects unblocked. Play hilarious sounds, create custom soundboards on any device.",
   generator: "soundboardunblocked",

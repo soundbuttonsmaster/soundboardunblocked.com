@@ -1,5 +1,5 @@
 // const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://play.soundboard.cloud/api/soundbuttonsspace.com"
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://192.168.1.96:8051/api/soundboardunblocked.com"
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://play.soundboard.cloud/api/soundboardunblocked.com"
 
 export interface ApiResponse<T> {
   status: number
