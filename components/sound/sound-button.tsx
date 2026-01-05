@@ -24,6 +24,7 @@ interface Props {
   setShowMessage?: (show: boolean) => void;
   dict?: any;
   className?: string;
+  isAboveTheFold?: boolean; // Mark sounds visible immediately for eager loading
 }
 
 // Global audio context for pausing other sounds
@@ -40,6 +41,7 @@ const SoundButton = memo(function SoundButton({
   setShowMessage,
   dict,
   className,
+  isAboveTheFold = false,
 }: Props) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
@@ -100,6 +102,7 @@ const SoundButton = memo(function SoundButton({
 
     if (!audioRef.current) {
       audioRef.current = new Audio(audioUrl);
+      audioRef.current.preload = "none"; // Don't preload - load only on play to avoid blocking LCP
       audioRef.current.onended = () => {
         setIsPlaying(false);
         currentAudio = null;
@@ -182,13 +185,51 @@ const SoundButton = memo(function SoundButton({
   };
 
   return (
-    <div className={cn("flex flex-col text-center items-center", className)}>
+    <div 
+      className={cn("flex flex-col text-center items-center", className)}
+      style={{
+        minHeight: size === "large" ? "280px" : "140px", // Fixed min-height to prevent CLS
+        width: "100%",
+        contain: "layout style",
+        willChange: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "flex-start",
+        padding: "0",
+        margin: "0",
+        boxSizing: "border-box",
+        overflow: "visible",
+        minWidth: 0,
+        maxWidth: "100%",
+        boxShadow: "none",
+        flexShrink: 0,
+        position: "relative",
+        border: "none",
+        outline: "none",
+        gap: "0",
+      }}
+    >
       {/* Button section - centered */}
-      <div className="flex items-center justify-center py-1 flex-shrink-0">
+      <div 
+        className="flex items-center justify-center py-1 flex-shrink-0" 
+        style={{ 
+          minHeight: size === "large" ? "230px" : "110px",
+          contain: "layout style",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <div
           className={`relative transition-all duration-300 ${
             isPlaying ? "scale-95" : "hover:scale-105"
           }`}
+          style={{
+            contain: "layout style",
+            willChange: "auto",
+          }}
         >
           <button
             className="sound-button-svg"
@@ -420,6 +461,9 @@ const SoundButton = memo(function SoundButton({
           transition: transform 0.2s ease;
           width: ${size === "large" ? "250px" : "120px"};
           height: ${size === "large" ? "230px" : "110px"};
+          contain: layout style;
+          will-change: auto;
+          display: block;
         }
 
         @media (max-width: 768px) {
@@ -448,6 +492,8 @@ const SoundButton = memo(function SoundButton({
           width: 100%;
           height: 100%;
           transition: all 0.2s ease;
+          contain: layout style;
+          display: block;
         }
       `}</style>
     </div>

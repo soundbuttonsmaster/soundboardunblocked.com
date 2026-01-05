@@ -186,6 +186,7 @@ export default function HomePage({
                 setMessageContent={setMessageContent}
                 setShowMessage={setShowMessage}
                 dict={dict}
+                isAboveTheFold={true}
               />
             ) : (
               <p className="py-8 text-center text-sm text-slate-500">

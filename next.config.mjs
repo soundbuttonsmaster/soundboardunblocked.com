@@ -4,7 +4,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    unoptimized: false, // Enable image optimization
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   compress: true,
   poweredByHeader: false,
@@ -14,11 +17,16 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
-  // cacheComponents: true,
+  // Optimize route prefetching for better navigation performance
   experimental: {
     optimizePackageImports: ["@/components", "@/lib", "lucide-react"],
     optimizeCss: true,
+    swcTraceProfiling: false,
   },
+  // Optimize fonts
+  optimizeFonts: true,
+  // Enable SWC minification
+  swcMinify: true,
   turbopack: {},
   async redirects() {
     return [

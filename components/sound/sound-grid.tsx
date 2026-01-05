@@ -15,6 +15,7 @@ interface Props {
   setShowMessage: (show: boolean) => void;
   dict: any;
   desktopCols?: number; // New prop for desktop columns
+  isAboveTheFold?: boolean; // Mark if this grid is above the fold
 }
 
 export default function SoundGrid({
@@ -27,6 +28,7 @@ export default function SoundGrid({
   setShowMessage,
   dict,
   desktopCols = 9,
+  isAboveTheFold = false,
 }: Props) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -102,7 +104,7 @@ export default function SoundGrid({
                 display: "grid", // Ensure grid display
               }}
             >
-              {rowSounds.map((sound) => (
+              {rowSounds.map((sound, soundIndex) => (
                 <SoundButton
                   key={sound.id}
                   sound={sound}
@@ -111,6 +113,7 @@ export default function SoundGrid({
                   setMessageContent={setMessageContent}
                   setShowMessage={setShowMessage}
                   dict={dict}
+                  isAboveTheFold={isAboveTheFold && rowIndex === 0 && soundIndex < desktopCols}
                 />
               ))}
             </div>

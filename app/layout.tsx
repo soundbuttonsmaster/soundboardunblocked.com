@@ -17,8 +17,11 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  // Title is set by individual pages via generateMetadata to prevent title flashing
-  // Root layout only provides fallback metadata, not specific titles
+  // Default title to prevent flashing - will be overridden by page-specific generateMetadata
+  title: {
+    default: "SoundBoardUnblocked - Free Meme Soundboard Unblocked",
+    template: "%s | SoundBoardUnblocked",
+  },
   description:
     "Discover 500,000+ free sound buttons, meme soundboards, and sound effects unblocked. Play hilarious sounds, create custom soundboards on any device.",
   generator: "soundboardunblocked",
@@ -68,8 +71,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js" />
-        <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js" />
+        <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js" defer />
+        <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js" defer />
 
         <script async src="//www.ezojs.com/ezoic/sa.min.js" />
         <script
@@ -92,8 +95,19 @@ export default function RootLayout({
             `,
           }}
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/favicon.ico" as="image" />
+        <link rel="preload" href="/icon-192x192.png" as="image" />
         <link rel="dns-prefetch" href="https://vercel.live" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://play.soundboard.cloud" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://play.soundboard.cloud" crossOrigin="anonymous" />
+        <link rel="preload" href="/favicon.ico" as="image" />
+        <link rel="preload" href="/icon-192x192.png" as="image" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ef4444" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
