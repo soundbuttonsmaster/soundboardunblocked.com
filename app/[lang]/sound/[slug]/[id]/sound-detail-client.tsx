@@ -121,7 +121,8 @@ export default function SoundDetailClient({
     e.stopPropagation();
     setIsDownloading(true);
     try {
-      const downloadUrl = apiClient.getSoundDownloadUrl(sound.id);
+      // Use proxy API route to avoid CORS issues
+      const downloadUrl = `/api/sounds/${sound.id}/download`;
       const response = await fetch(downloadUrl);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -135,9 +136,14 @@ export default function SoundDetailClient({
       a.click();
       a.remove();
       window.URL.revokeObjectURL(url);
+      setMessageContent(dict.soundDetail.downloadStarted || "Download started");
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 3000);
     } catch (error) {
       console.error("Error downloading sound:", error);
-      alert("Failed to download sound.");
+      setMessageContent(dict.soundDetail.downloadFailed || "Failed to download sound");
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 3000);
     } finally {
       setIsDownloading(false);
     }

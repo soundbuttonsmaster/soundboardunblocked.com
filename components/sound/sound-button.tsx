@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState, useRef, useCallback, memo } from "react";
+import { useState, useRef, useCallback, memo, useMemo } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useFavorites } from "@/contexts/favorites-context";
@@ -80,9 +80,100 @@ const SoundButton = memo(function SoundButton({
     return colors[colorIndex];
   };
 
+  // Pre-calculate colors immediately - no memoization needed, just compute once
   const colorHex = getColorHex(getSoundColor(sound));
   const rgb = hexToRgb(colorHex);
   const colors = generateColorVariations(rgb);
+  
+  // Pre-calculate CSS variables for immediate rendering - compute synchronously
+  const color1 = rgbToHex(colors.medium.r, colors.medium.g, colors.medium.b);
+  const color2 = rgbToHex(colors.dark.r, colors.dark.g, colors.dark.b);
+  const cssVars = {
+    "--button-color-1": color1,
+    "--button-color-2": color2,
+    "--button-color-3": rgbToHex(colors.light.r, colors.light.g, colors.light.b),
+    "--button-color-4": rgbToHex(colors.darkest.r, colors.darkest.g, colors.darkest.b),
+    "--button-color-5": color1,
+    "--button-color-6": color2,
+  };
+  
+  // Split SVG into base (static) and top (pressable) parts
+  // Base stays static, only top part moves down when pressed
+  const baseSvg = useMemo(() => (
+    <svg
+      className="sound-button-base"
+      viewBox="0 0 2500 2500"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ 
+        display: "block", 
+        width: "100%", 
+        height: "100%",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+      }}
+    >
+      <defs>
+        <style>
+          {`.cls-3{fill:#b1b1d9}.cls-4{fill:#d9d9ed}.cls-5{fill:#888bbf}`}
+        </style>
+      </defs>
+      {/* Base/shadow parts - always static */}
+      <path
+        className="cls-5"
+        d="M2464.73,1294.34v377.66c0,180.2-118.52,359.18-355.56,495.84-474.08,274.53-1244.46,274.53-1718.53,0-237.04-136.66-355.56-315.65-355.56-495.84v-377.66h2429.65Z"
+      />
+      <path
+        className="cls-3"
+        d="M2464.73,1186.35v377.65c0,180.2-118.52,359.18-355.56,495.84-474.08,274.53-1244.46,274.53-1718.53,0-237.04-136.66-355.56-315.65-355.56-495.84v-377.65h2429.65Z"
+      />
+      <path
+        className="cls-4"
+        d="M2109.28,1682.31c-474.55,273.98-1243.96,273.98-1718.53-.02-474.56-273.99-474.58-718.21-.02-992.19,474.55-273.98,1243.96-273.98,1718.53.02,474.56,273.99,474.57,718.21.02,992.19Z"
+      />
+    </svg>
+  ), []);
+
+  const topSvg = useMemo(() => (
+    <svg
+      className="sound-button-top"
+      viewBox="0 0 2500 2500"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ 
+        display: "block", 
+        width: "100%", 
+        height: "100%",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        pointerEvents: "none",
+        transform: isPressed ? "translateY(12px)" : "translateY(0px)",
+        transition: "transform 0.08s cubic-bezier(0.4, 0, 0.2, 1)",
+      }}
+    >
+      <defs>
+        <style>
+          {`.cls-1{fill:var(--button-color-1)}.cls-2{fill:var(--button-color-1);}.cls-6{fill:var(--button-color-2)}`}
+        </style>
+      </defs>
+      {/* Top button part - moves down when pressed */}
+      <g>
+        <path
+          className="cls-6"
+          d="M2233.82,694.59v437.11c0,145.94-95.99,290.9-287.97,401.58-383.97,222.35-1007.9,222.35-1391.85,0-191.98-110.68-287.97-255.64-287.97-401.58v-437.11h1967.78Z"
+        />
+        <path
+          className="cls-1"
+          d="M1945.93,1096.28c-384.34,221.9-1007.49,221.89-1391.84-.02-384.36-221.9-384.36-581.68-.02-803.58,384.34-221.9,1007.49-221.9,1391.84,0,384.36,221.91,384.36,581.68.02,803.58Z"
+        />
+        <path
+          className="cls-2"
+          d="M2233.74,739.25c0,145.12-95.54,290.24-287.84,401.52-384.58,221.3-1007.41,221.3-1392,0-192.29-111.28-289.04-256.4-289.04-401.52,1.21,105.22,97.96,209.22,289.04,289.04,384.59,160.84,1007.42,160.84,1392,0,191.08-79.82,286.62-183.83,287.84-289.04Z"
+        />
+      </g>
+    </svg>
+  ), [color1, color2, isPressed]);
 
   const handlePlay = useCallback(() => {
     const audioUrl = apiClient.getSoundAudioUrl(sound.id);
@@ -162,7 +253,8 @@ const SoundButton = memo(function SoundButton({
     e.stopPropagation();
     setIsDownloading(true);
     try {
-      const downloadUrl = apiClient.getSoundDownloadUrl(sound.id);
+      // Use proxy API route to avoid CORS issues
+      const downloadUrl = `/api/sounds/${sound.id}/download`;
       const response = await fetch(downloadUrl);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -176,9 +268,20 @@ const SoundButton = memo(function SoundButton({
       a.click();
       a.remove();
       window.URL.revokeObjectURL(url);
+      if (setMessageContent && setShowMessage && dict) {
+        setMessageContent(dict.download.started || "Download started");
+        setShowMessage(true);
+        setTimeout(() => setShowMessage(false), 3000);
+      }
     } catch (error) {
       console.error("Error downloading sound:", error);
-      alert("Failed to download sound.");
+      if (setMessageContent && setShowMessage && dict) {
+        setMessageContent(dict.download.failed || "Failed to download sound");
+        setShowMessage(true);
+        setTimeout(() => setShowMessage(false), 3000);
+      } else {
+        alert("Failed to download sound.");
+      }
     } finally {
       setIsDownloading(false);
     }
@@ -223,12 +326,16 @@ const SoundButton = memo(function SoundButton({
         }}
       >
         <div
-          className={`relative transition-all duration-300 ${
-            isPlaying ? "scale-95" : "hover:scale-105"
-          }`}
           style={{
-            contain: "layout style",
+            contain: "layout style paint",
             willChange: "auto",
+            position: "relative",
+            width: size === "large" ? "250px" : "120px",
+            height: size === "large" ? "230px" : "110px",
+            margin: 0,
+            padding: 0,
+            display: "block",
+            flexShrink: 0,
           }}
         >
           <button
@@ -239,122 +346,25 @@ const SoundButton = memo(function SoundButton({
             onMouseLeave={() => setIsPressed(false)}
             onTouchStart={() => setIsPressed(true)}
             onTouchEnd={() => setTimeout(() => setIsPressed(false), 250)}
-            style={
-              {
-                WebkitTapHighlightColor: "transparent",
-                "--button-color-1": rgbToHex(
-                  colors.medium.r,
-                  colors.medium.g,
-                  colors.medium.b
-                ),
-                "--button-color-2": rgbToHex(
-                  colors.dark.r,
-                  colors.dark.g,
-                  colors.dark.b
-                ),
-                "--button-color-3": rgbToHex(
-                  colors.light.r,
-                  colors.light.g,
-                  colors.light.b
-                ),
-                "--button-color-4": rgbToHex(
-                  colors.darkest.r,
-                  colors.darkest.g,
-                  colors.darkest.b
-                ),
-                "--button-color-5": rgbToHex(
-                  colors.medium.r,
-                  colors.medium.g,
-                  colors.medium.b
-                ),
-                "--button-color-6": rgbToHex(
-                  colors.dark.r,
-                  colors.dark.g,
-                  colors.dark.b
-                ),
-              } as React.CSSProperties
-            }
+            style={{
+              WebkitTapHighlightColor: "transparent",
+              ...cssVars,
+              position: "relative",
+              transform: "none !important",
+              margin: 0,
+              padding: 0,
+              border: "none",
+              outline: "none",
+              width: "100%",
+              height: "100%",
+              display: "block",
+            } as React.CSSProperties}
             aria-label={`Play ${sound.name}`}
           >
-            {isPressed ? (
-              // Pressed button SVG
-              <svg
-                className="sound-button-svg-content"
-                viewBox="0 0 2500 2500"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <style>
-                    {`.cls-1{fill:var(--button-color-1);}.cls-2{fill:var(--button-color-1)}.cls-3{fill:#b1b1d9}.cls-4{fill:#d9d9ed}.cls-5{fill:#888bbf}.cls-6{fill:var(--button-color-2)}`}
-                  </style>
-                </defs>
-                <path
-                  className="cls-5"
-                  d="M2468.57,1157.86v378.85c0,180.77-118.9,360.32-356.68,497.41-475.58,275.4-1248.39,275.4-1723.96,0C150.13,1897.03,31.24,1717.48,31.24,1536.71v-378.85h2437.33Z"
-                />
-                <path
-                  className="cls-3"
-                  d="M2468.57,1049.52v378.85c0,180.77-118.9,360.32-356.68,497.41-475.58,275.4-1248.39,275.4-1723.96,0C150.13,1788.69,31.24,1609.14,31.24,1428.37v-378.85h2437.33Z"
-                />
-                <path
-                  className="cls-4"
-                  d="M2111.99,1547.05c-476.05,274.85-1247.89,274.84-1723.96-.02-476.06-274.86-476.07-720.48-.02-995.33,476.05-274.85,1247.89-274.84,1723.96.02,476.06,274.86,476.07,720.48.02,995.33Z"
-                />
-                <g>
-                  <path
-                    className="cls-6"
-                    d="M2236.93,805.12v199.02c0,143.99-96.31,286.99-288.88,396.17-385.19,219.35-1011.08,219.35-1396.23,0-192.61-109.18-288.88-252.18-288.88-396.17v-196.55c3.09-80.55,36.58-160.79,100.47-234.68h1773.16c63.25,73.14,96.7,152.5,100.36,232.2Z"
-                  />
-                  <path
-                    className="cls-2"
-                    d="M2236.93,834.71c-2.12,46.35-14.32,92.59-36.61,137.57-44.29,89.34-128.36,173.71-252.2,244.03-385.54,218.9-1010.65,218.9-1396.23,0-121.4-68.94-204.56-151.33-249.54-238.73-.04-.04-.04-.07-.04-.11-24.41-47.37-37.51-96.26-39.38-145.22-.32-8.22-.32-16.45,0-24.64,3.09-80.55,36.58-160.79,100.47-234.68,46.63-53.97,109.44-104.52,188.48-149.39,385.54-218.93,1010.65-218.93,1396.23,0,79,44.87,141.82,95.42,188.45,149.39,63.25,73.14,96.7,152.5,100.36,232.2.47,9.88.47,19.73,0,29.58Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M2236.85,868.71c0,141.99-95.84,283.97-288.75,392.85-385.79,216.51-1010.59,216.51-1396.39,0-192.89-108.88-289.95-250.86-289.95-392.85,1.22,102.94,98.27,204.7,289.95,282.8,385.8,157.36,1010.6,157.36,1396.39,0,191.69-78.1,287.53-179.86,288.75-282.8Z"
-                  />
-                </g>
-              </svg>
-            ) : (
-              // Default button SVG
-              <svg
-                className="sound-button-svg-content"
-                viewBox="0 0 2500 2500"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <style>
-                    {`.cls-1{fill:var(--button-color-1)}.cls-2{fill:var(--button-color-1);}.cls-3{fill:#b1b1d9}.cls-4{fill:#d9d9ed}.cls-5{fill:#888bbf}.cls-6{fill:var(--button-color-2)}`}
-                  </style>
-                </defs>
-                <path
-                  className="cls-5"
-                  d="M2464.73,1294.34v377.66c0,180.2-118.52,359.18-355.56,495.84-474.08,274.53-1244.46,274.53-1718.53,0-237.04-136.66-355.56-315.65-355.56-495.84v-377.66h2429.65Z"
-                />
-                <path
-                  className="cls-3"
-                  d="M2464.73,1186.35v377.65c0,180.2-118.52,359.18-355.56,495.84-474.08,274.53-1244.46,274.53-1718.53,0-237.04-136.66-355.56-315.65-355.56-495.84v-377.65h2429.65Z"
-                />
-                <path
-                  className="cls-4"
-                  d="M2109.28,1682.31c-474.55,273.98-1243.96,273.98-1718.53-.02-474.56-273.99-474.58-718.21-.02-992.19,474.55-273.98,1243.96-273.98,1718.53.02,474.56,273.99,474.57,718.21.02,992.19Z"
-                />
-                <g>
-                  <path
-                    className="cls-6"
-                    d="M2233.82,694.59v437.11c0,145.94-95.99,290.9-287.97,401.58-383.97,222.35-1007.9,222.35-1391.85,0-191.98-110.68-287.97-255.64-287.97-401.58v-437.11h1967.78Z"
-                  />
-                  <path
-                    className="cls-1"
-                    d="M1945.93,1096.28c-384.34,221.9-1007.49,221.89-1391.84-.02-384.36-221.9-384.36-581.68-.02-803.58,384.34-221.9,1007.49-221.9,1391.84,0,384.36,221.91,384.36,581.68.02,803.58Z"
-                  />
-                  <path
-                    className="cls-2"
-                    d="M2233.74,739.25c0,145.12-95.54,290.24-287.84,401.52-384.58,221.3-1007.41,221.3-1392,0-192.29-111.28-289.04-256.4-289.04-401.52,1.21,105.22,97.96,209.22,289.04,289.04,384.59,160.84,1007.42,160.84,1392,0,191.08-79.82,286.62-183.83,287.84-289.04Z"
-                  />
-                </g>
-              </svg>
-            )}
+            {/* Base SVG - always static, never moves */}
+            {baseSvg}
+            {/* Top SVG - moves down when pressed, base stays static */}
+            {topSvg}
           </button>
         </div>
       </div>
@@ -454,46 +464,72 @@ const SoundButton = memo(function SoundButton({
 
       <style jsx>{`
         .sound-button-svg {
-          border: none;
-          background: none;
-          padding: 0;
+          border: none !important;
+          background: none !important;
+          padding: 0 !important;
           cursor: pointer;
-          transition: transform 0.2s ease;
-          width: ${size === "large" ? "250px" : "120px"};
-          height: ${size === "large" ? "230px" : "110px"};
-          contain: layout style;
+          width: 100% !important;
+          height: 100% !important;
+          contain: layout style paint !important;
           will-change: auto;
-          display: block;
+          display: block !important;
+          position: relative !important;
+          margin: 0 !important;
+          transform: none !important;
+          transition: none !important;
+          overflow: visible;
+        }
+
+        .sound-button-svg:hover {
+          transform: none !important;
+        }
+
+        .sound-button-svg:active {
+          transform: none !important;
         }
 
         @media (max-width: 768px) {
           .sound-button-svg {
-            width: 150px;
-            height: 140px;
+            width: 100% !important;
+            height: 100% !important;
           }
         }
 
         @media (max-width: 480px) {
           .sound-button-svg {
-            width: 120px;
-            height: 110px;
+            width: 100% !important;
+            height: 100% !important;
           }
         }
 
-        .sound-button-svg:hover {
-          transform: scale(1.05);
+        .sound-button-base {
+          width: 100% !important;
+          height: 100% !important;
+          contain: layout style paint !important;
+          display: block !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          transform: none !important;
+          transition: none !important;
+          pointer-events: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          z-index: 1;
         }
 
-        .sound-button-svg:active {
-          transform: scale(0.95);
-        }
-
-        .sound-button-svg-content {
-          width: 100%;
-          height: 100%;
-          transition: all 0.2s ease;
-          contain: layout style;
-          display: block;
+        .sound-button-top {
+          width: 100% !important;
+          height: 100% !important;
+          contain: layout style paint !important;
+          display: block !important;
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          pointer-events: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          z-index: 2;
         }
       `}</style>
     </div>
