@@ -71,19 +71,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js" defer />
-        <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js" defer />
-
-        <script async src="//www.ezojs.com/ezoic/sa.min.js" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.ezstandalone = window.ezstandalone || {};
-              ezstandalone.cmd = ezstandalone.cmd || [];
-            `,
-          }}
-        />
-
         <style
           dangerouslySetInnerHTML={{
             __html: `
@@ -106,8 +93,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://play.soundboard.cloud" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://play.soundboard.cloud" crossOrigin="anonymous" />
-        <link rel="preload" href="/favicon.ico" as="image" />
-        <link rel="preload" href="/icon-192x192.png" as="image" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ef4444" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
