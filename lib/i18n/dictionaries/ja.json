@@ -1,0 +1,227 @@
+{
+  "common": {
+    "play": "再生",
+    "pause": "一時停止",
+    "search": "検索",
+    "searchResults": "検索結果",
+    "metaTitle": "{Search Name} 効果音ボタン",
+    "metaDescription": "ミームサウンドボード用の{Search Name}効果音ボタンを発見！アンブロックされたサウンドボタン、効果音、バイラルコンテンツ作成に最適。",
+    "h1": "{Search Name} 効果音ボタン",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "noResults": "結果が見つかりません",
+    "favorites": "お気に入り",
+    "mySoundboards": "マイサウンドボード",
+    "allSounds": "すべてのサウンド",
+    "share": "共有",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "seeAll": "すべて見る",
+    "home": "ホーム",
+    "showing": "表示中",
+    "of": "件中",
+    "sounds": "サウンド"
+  },
+  "nav": {
+    "home": "ホーム",
+    "new": "新着",
+    "trending": "トレンド",
+    "categories": "カテゴリー",
+    "soundboards": "サウンドボード",
+    "pages": "ページ",
+    "about": "私たちについて",
+    "contact": "お問い合わせ",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "dmca": "DMCA",
+    "disclaimer": "免責事項",
+    "login": "ログイン",
+    "register": "登録",
+    "logout": "ログアウト",
+    "upload": "アップロード"
+  },
+  "home": {
+    "title": "サウンドボード アンブロック：サウンドボタンとミームサウンドボードへの即座アクセス",
+    "subtitle": "サウンドボード アンブロックは、ミームサウンドボード、サウンドボタン、いたずら音、効果音の大規模コレクションを提供します。スマートフォン、デスクトップ、タブレットで独自のサウンドボードも作成できます。",
+    "searchPlaceholder": "サウンドを検索...",
+    "popularSounds": "人気のサウンド",
+    "browseSoundboards": "サウンドボードを見る",
+    "trending": "サウンドボタン：トレンド",
+    "newSounds": "サウンドボタン：新着",
+    "exploreTrending": "もっとトレンドサウンドを見る",
+    "exploreNew": "もっと新着サウンドを見る",
+    "aboutTitle": "サウンドボード・アンブロックド：即座に再生、ダウンロード、サウンドボタンを作成",
+    "aboutDescription": "サウンドボード・アンブロックドへようこそ!クリックするたびに新しいサウンドが開きます。クリエイター、ゲーマー、そして一般ユーザー向けに構築されたサウンドボタン、ミームサウンドボード、いたずらサウンド、効果音の膨大なコレクションをご覧ください。",
+    "whoBenefits": "サウンドボード・アンブロックドとは?",
+    "whoBenefitsDesc": "アンブロックドされたサウンドボードは、学校、自宅、外出先など、どこでも機能する何千もの効果音とオーディオクリップへの即座のゲートウェイです。当社のブラウザベースのプラットフォームでは、ダウンロードやインストールが必要な従来のアプリとは異なり、お気に入りのサウンドをすぐに聴くことができます。ブラウザを開いて、お気に入りのサウンドボタンを選んで、すぐに再生を始めましょう。",
+    "whyChoose": "なぜ当社のサウンドボードを選ぶのか?",
+    "whyChooseDesc": "当社のサウンドボードは、スピード、楽しさ、シンプルさを重視して構築されています。ミームサウンドを再生したり、いたずらオーディオをダウンロードしたり、独自のサウンドボードを作成したりする場合でも、すべてが制限なく即座に機能します。Chromebook、スマートフォン、デスクトップのいずれを使用していても、当社のサウンドボードはすべてのデバイスで完璧に動作します。さらに、コンテンツを新鮮で関連性のあるものに保つために、最新のバイラルサウンドを常に追加しています。",
+    "exploreCollection": "サウンドボタンのセレクションをチェック",
+    "exploreCollectionDesc": "わかりやすくグループ化された膨大なサウンドボタンのセレクションをチェックしてください。当社のミームサウンドボードには、古い「ブラー」の瞬間から最新のバイラルヒットまで、すべてが揃っています。面白いサウンドで友達にいたずらしたいですか?それもあります。当社の壮大な効果音のコレクションは、Discordの反応やストリーム通知に最適で、ゲーマーはそれらを気に入るでしょう。",
+    "exploreCategoriesTitle": "サウンドボードのカテゴリを探索",
+    "exploreCategoriesIntro": "整理されたサウンドボードのカテゴリを見れば、数秒で適切なサウンドを見つけることができます。",
+    "memesCategory": "ミーム",
+    "memesCategoryDesc": "インターネットで最も面白いものからの人気のオーディオクリップとバイラルミームサウンド。",
+    "pranksCategory": "いたずら",
+    "pranksCategoryDesc": "友達を笑わせて冗談を言うのに最適な、楽しく安全ないたずら。",
+    "soundEffectsCategory": "効果音",
+    "soundEffectsCategoryDesc": "ビデオ、ストリーム、その他のクリエイティブプロジェクト用の古い効果音と新しい効果音。",
+    "gamesCategory": "ゲーミング",
+    "gamesCategoryDesc": "ストリーマーとゲーマーが使用できる人気のゲームサウンド、反応、エフェクト。",
+    "reactionCategory": "リアクション",
+    "reactionCategoryDesc": "ビデオ、チャット、瞬間をより楽しくする素早いリアクションサウンド。",
+    "moviesCategory": "映画",
+    "moviesCategoryDesc": "ミームやビデオ用の象徴的な映画のサウンド、有名な引用、人気映画の効果音。",
+    "createSoundboardTitle": "独自のカスタムサウンドボードを作成",
+    "createSoundboardDesc": "サウンドボード・アンブロックドでは、聴くだけでなく、独自のサウンドを作成できます。スマートフォン、デスクトップ、タブレットから直接、独自のサウンドボードを作成できます。お気に入りのオーディオクリップをアップロードし、ボタンに入れて、いつでも再生できます。",
+    "perfectOccasionTitle": "あらゆる場面に最適",
+    "perfectOccasionDesc1": "当社のサウンドボードは、YouTube動画、TikTok、またはTwitchストリームを作成する人々にとって最高のツールです。ゲーマーは、Discordで話したり、ゲーム内で反応したりするために、当社のサウンドボタンを使用するのが大好きです。",
+    "perfectOccasionDesc2": "学生は楽しい休憩のために当社のプラットフォームを使用し、素早く面白い反応を求めている人なら誰でも、必要なものを正確に見つけることができます。真剣なコンテンツ作成からカジュアルなエンターテイメントまで、あらゆる瞬間にサウンドがあります。",
+    "faqTitle": "よくある質問 (FAQs)",
+    "faq1Question": "サウンドボード・アンブロックドは無料で使用できますか?",
+    "faq1Answer": "はい、サウンドボード・アンブロックドは完全に無料で使用できます。",
+    "faq2Question": "サウンドボードを使用するために何かをダウンロードする必要がありますか?",
+    "faq2Answer": "いいえ!どのデバイスでもブラウザで直接サウンドボードを使用できます。サイトにアクセスして、すぐにサウンドの再生を開始するだけです。",
+    "faq3Question": "学校のChromebookでこのサウンドボード・アンブロックドを使用できますか?",
+    "faq3Answer": "はい!当社のサウンドボード・アンブロックドは、学校のChromebookとネットワークで完璧に動作します。",
+    "faq4Question": "ミームサウンドボードに新しいサウンドをどのくらいの頻度で追加していますか？",
+    "faq4Answer": "TikTokのトレンドサウンド、バイラルミーム、ポップカルチャーから、ミームサウンドボードを毎日更新しています。常に新鮮なコンテンツを見つけることができます。",
+    "faq5Question": "サウンドボードからサウンドを共有またはダウンロードできますか？",
+    "faq5Answer": "はい！すべてのサウンドボタンは再生、ソーシャルメディアでの共有、またはコンテンツ制作プロジェクトでの使用のためにダウンロードすることができ、すべて完全に無料です。",
+    "ctaTitle": "Soundboard Unblocked を使い始める",
+    "ctaDesc": "Soundboard Unblocked は、ミームサウンド、リアクション、ゲームサウンド、映画サウンドなど、多くのサウンドボタンを提供しています。すべてのサウンドボタンは、ブラウザで直接再生できます。",
+    "ctaNew": "新しいサウンドボードを作成",
+    "ctaTrending": "トレンドサウンド"
+  },
+  "categories": {
+    "meme": "ミーム",
+    "reaction": "リアクション",
+    "games": "ゲーム",
+    "movies": "映画",
+    "animeAndManga": "アニメ＆マンガ",
+    "prank": "いたずら",
+    "tiktokTrends": "TikTokトレンド",
+    "creativity": "クリエイティビティ",
+    "politics": "政治",
+    "soundEffects": "効果音"
+  },
+  "soundboard": {
+    "sounds": "サウンド",
+    "noSounds": "このサウンドボードにはまだサウンドがありません",
+    "addToFavorites": "お気に入りに追加",
+    "removeFromFavorites": "お気に入りから削除",
+    "addToSoundboard": "マイサウンドボードに追加",
+    "playCount": "再生回数"
+  },
+  "favorites": {
+    "title": "マイお気に入り",
+    "empty": "お気に入りはまだありません",
+    "emptyDescription": "サウンドのハートアイコンをクリックしてお気に入りに追加"
+  },
+  "mySoundboards": {
+    "title": "マイサウンドボード",
+    "create": "サウンドボードを作成",
+    "createTitle": "新しいサウンドボードを作成",
+    "namePlaceholder": "サウンドボード名を入力",
+    "empty": "サウンドボードはまだありません",
+    "emptyDescription": "お気に入りのサウンドでオリジナルのサウンドボードを作成",
+    "delete": "削除",
+    "edit": "編集"
+  },
+  "trending": {
+    "h1": "トレンドサウンドボード：最も人気のサウンドボタン",
+    "shortDescription": "トレンドのサウンドボタンとミームサウンドボード アンブロックコレクションを探索。",
+    "empty": "トレンドサウンドはまだ利用できません"
+  },
+  "new": {
+    "h1": " 新着サウンドボード：最新のサウンドボタン",
+    "shortDescription": "新しく追加されたサウンドボタンとミームサウンドボード アンブロックコレクションをチェック。",
+    "empty": "新着サウンドはまだ利用できません"
+  },
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "confirmPassword": "パスワードを確認",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "noAccount": "アカウントをお持ちでないですか？",
+    "hasAccount": "既にアカウントをお持ちですか？",
+    "signIn": "サインイン",
+    "signUp": "サインアップ",
+    "signOut": "サインアウト",
+    "loginSuccess": "ログインに成功しました！",
+    "registerSuccess": "登録に成功しました！",
+    "loginError": "ログインエラー",
+    "registerError": "登録エラー"
+  },
+  "upload": {
+    "title": "サウンドをアップロード",
+    "description": "独自のサウンドボタンをアップロードして共有",
+    "soundName": "サウンド名",
+    "soundFile": "サウンドファイル",
+    "category": "カテゴリー",
+    "selectCategory": "カテゴリーを選択",
+    "uploadButton": "サウンドをアップロード",
+    "uploadSuccess": "サウンドが正常にアップロードされました！",
+    "uploadError": "サウンドのアップロードに失敗しました"
+  },
+  "pages": {
+    "about": {
+      "title": "私たちについて",
+      "description": "サウンドボタンマックスについて詳しく知る"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "description": "ご質問やフィードバックをお寄せください"
+    },
+    "privacy": {
+      "title": "プライバシーポリシー",
+      "description": "当社のプライバシー慣行について読む"
+    },
+    "terms": {
+      "title": "利用規約",
+      "description": "サービス利用規約を読む"
+    },
+    "dmca": {
+      "title": "DMCA",
+      "description": "DMCA通知と手順"
+    },
+    "disclaimer": {
+      "title": "免責事項",
+      "description": "免責事項と法的通知"
+    }
+  },
+  "footer": {
+    "copyright": "サウンドボタンマックス",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ"
+  },
+  "meta": {
+  "title": "サウンドボード アンブロック：ミームサウンドボードとサウンドボタンで遊ぼう",
+  "description": "サウンドボード アンブロックで何千ものサウンドボタン、ミームサウンドボード、いたずら音、ミームボタン、効果音を即座に再生・ダウンロード。"
+  },
+  "soundDetail": {
+    "addToSoundboard": "マイサウンドボードに追加",
+    "addedToSoundboard": "サウンドボードに追加しました",
+    "removedFromSoundboard": "サウンドボードから削除しました",
+    "getRingtone": "着信音を取得",
+    "downloadMp3": "MP3をダウンロード",
+    "notificationSound": "通知音",
+    "socialMediaSharing": "ソーシャルメディア共有",
+    "usersFavorited": "ユーザーがこのサウンドボタンをお気に入りに追加",
+    "viewed": "がこのサウンドボタンを閲覧",
+    "played": "がこのサウンドボタンを再生",
+    "youMightAlsoLike": "おすすめ",
+    "exploreMore": "もっと見る",
+    "addedToFavorites": "お気に入りに追加されました！",
+    "removedFromFavorites": "お気に入りから削除されました！"
+  },
+  "loadMore": {
+    "button": "もっと読み込む",
+    "loading": "読み込み中..."
+  }
+}
+
+

@@ -1,0 +1,222 @@
+{
+  "common": {
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "search": "Pesquisar",
+    "searchResults": "Resultados da pesquisa",
+    "metaTitle": "Botão de Efeito Sonoro {Search Name}",
+    "metaDescription": "Descubra os botões de efeitos sonoros {Search Name} para seu soundboard de memes! Perfeito para botões de som desbloqueados, efeitos sonoros e criação de conteúdo viral.",
+    "h1": "Botão de Efeito Sonoro {Search Name}",
+    "loading": "Carregando...",
+    "error": "Algo deu errado",
+    "noResults": "Nenhum resultado encontrado",
+    "favorites": "Favoritos",
+    "mySoundboards": "Meus Painéis",
+    "allSounds": "Todos os Sons",
+    "share": "Compartilhar",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "seeAll": "Ver Tudo",
+    "home": "Início",
+    "showing": "Mostrando",
+    "of": "de",
+    "sounds": "sons"
+  },
+  "nav": {
+    "home": "Início",
+    "new": "Novo",
+    "trending": "Tendências",
+    "categories": "Categorias",
+    "soundboards": "Painéis de Som",
+    "pages": "Páginas",
+    "about": "Sobre Nós",
+    "contact": "Contato",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "dmca": "DMCA",
+    "disclaimer": "Aviso Legal",
+    "login": "Entrar",
+    "register": "Registrar",
+    "upload": "Enviar",
+    "logout": "Sair"
+  },
+  "home": {
+    "title": "Soundboard Desbloqueado: Acesso Instantâneo a Botões de Som e Mesa de Memes Sonoros",
+    "subtitle": "Soundboard Desbloqueado oferece uma grande coleção de mesas de memes sonoros, botões de som, sons de pegadinha e efeitos sonoros. Você também pode criar seu próprio soundboard no seu smartphone, computador ou tablet.",
+    "searchPlaceholder": "Pesquisar sons...",
+    "popularSounds": "Sons Populares",
+    "browseSoundboards": "Explorar Painéis",
+    "trending": "Botões de Som: Tendências",
+    "newSounds": "Botões de Som: Novo",
+    "exploreTrending": "Explorar Mais Sons em Tendência",
+    "exploreNew": "Explorar Mais Sons Novos",
+    "aboutTitle": "Mesa de Som Desbloqueada: Reproduza, Baixe e Crie Botões de Som Instantaneamente",
+    "aboutDescription": "Bem-vindo ao Soundboard Desbloqueado! Cada clique abre um novo som. Explore uma grande coleção de sound buttons, meme soundboards, sons de pegadinhas e efeitos sonoros feitos para criadores, gamers e usuários do dia a dia.",
+    "whoBenefits": "O que é uma mesa de som desbloqueada?",
+    "whoBenefitsDesc": "Com uma mesa de som desbloqueada, você tem acesso imediato a milhares de efeitos sonoros e clipes de áudio, esteja você na escola, em casa ou em qualquer outro lugar. Nossa plataforma baseada no navegador permite que você ouça todos os seus sons favoritos imediatamente, diferente dos aplicativos tradicionais que precisam ser baixados ou instalados. Basta abrir o navegador, escolher seus sound buttons favoritos e começar a tocar na hora.",
+    "whyChoose": "Por que escolher nossa Mesa de Som?",
+    "whyChooseDesc": "Nossa mesa de som foi projetada para ser rápida, divertida e simples. Se você deseja reproduzir sons de memes, baixar áudios de pegadinhas ou criar sua própria mesa de som, tudo funciona instantaneamente e sem limites. Seja em um Chromebook, smartphone ou computador, nossa mesa de som funciona perfeitamente em todos os dispositivos. Além disso, estamos constantemente adicionando os sons virais mais recentes para manter seu conteúdo atualizado e relevante. Confira nossa coleção de botões de som.",
+    "exploreCollection": "Explore nossa vasta coleção de Botões de Som",
+    "exploreCollectionDesc": "Navegue por nossa enorme coleção de botões de som, organizada em categoriasfáceis de entender. Nossa mesa de som de memes tem de tudo, desde momentos clássicos de \"Bruh\" até os últimos sucessos virais. Quer pregar peças em seus amigos com sons engraçados? Nós também temos isso. Nossa coleção de efeitos sonoros épicos é perfeita para reações no Discord ou alertas de stream, e os jogadores vão adorar.",
+    "exploreCategoriesTitle": "Navegue pelas categorias da Mesa de Som",
+    "exploreCategoriesIntro": "Você pode encontrar o som certo rapidamente navegando pelas categorias bem organizadas:",
+    "memesCategory": "Memes",
+    "memesCategoryDesc": "Sons de memes populares e dos momentos mais engraçados da internet.",
+    "pranksCategory": "Pegadinhas",
+    "pranksCategoryDesc": "Uma pegadinha divertida e inofensiva é ótima para fazer amigos rirem e brincarem.",
+    "soundEffectsCategory": "Efeitos Sonoros",
+    "soundEffectsCategoryDesc": "Efeitos sonoros antigos e novos para vídeos, streams e outros projetos criativos.",
+    "gamesCategory": "Jogos",
+    "gamesCategoryDesc": "Sons, reações e efeitos populares para streamers e gamers.",
+    "reactionCategory": "Reação",
+    "reactionCategoryDesc": "Sons de reação rápidos que tornam vídeos, chats e momentos muito mais divertidos.",
+    "moviesCategory": "Filmes",
+    "moviesCategoryDesc": "Citações famosas, sons icônicos e efeitos sonoros de filmes conhecidos que você pode usar em memes e vídeos.",
+    "createSoundboardTitle": "Crie seu próprio Soundboard personalizado",
+    "createSoundboardDesc": "A Mesa de Som Desbloqueada permite que você ouça e crie seus próprios sons. Crie sua mesa de som personalizada diretamente do seu smartphone, computador ou tablet. Envie seus clipes de áudio favoritos, organize-os em botões e reproduza-os quando quiser.",
+    "perfectOccasionTitle": "Perfeito para qualquer ocasião",
+    "perfectOccasionDesc1": "Para quem cria vídeos no YouTube, TikTok ou faz lives na Twitch, nosso soundboard é a ferramenta ideal. Gamers adoram usar nossos sound buttons em chamadas de voz no Discord e reações dentro do jogo.",
+    "perfectOccasionDesc2": "Estudantes usam a plataforma para pausas divertidas, e qualquer pessoa que procure reações rápidas e engraçadas vai encontrar exatamente o que precisa. Da criação de conteúdo profissional ao entretenimento casual, existe um som para cada momento.",
+    "faqTitle": "Perguntas Frequentes (FAQs)",
+    "faq1Question": "A mesa de som Unlocked Soundboard é gratuita?",
+    "faq1Answer": "Sim, a Unlocked Soundboard é totalmente gratuita.",
+    "faq2Question": "Preciso baixar alguma coisa para usar a mesa de som?",
+    "faq2Answer": "Não, você não precisa baixar nada. Nossa mesa de som funciona diretamente no seu navegador.",
+    "faq3Question": "Posso usar esta mesa de som em Chromebooks escolares?",
+    "faq3Answer": "Sim! Nossa mesa de som funciona perfeitamente em Chromebooks e redes escolares.",
+    "faq4Question": "Com que frequência vocês adicionam novos sons à mesa de som de memes?",
+    "faq4Answer": "Atualizamos nossa mesa de som de memes diariamente com sons populares do TikTok, memes virais e conteúdo da cultura pop. Você sempre encontrará conteúdo novo para explorar.",
+    "faq5Question": "Posso compartilhar ou baixar os sons da mesa de som?",
+    "faq5Answer": "Sim! Cada botão de som pode ser reproduzido, compartilhado nas redes sociais ou baixado para uso em seus projetos de criação de conteúdo, tudo completamente grátis.",
+    "ctaTitle": "Está pronto para começar?",
+    "ctaDesc": "Junte-se aos milhões de usuários que já estão usando o Soundboard Desbloqueado. Crie seu próprio painel, explore novos sons e conecte-se com outros que amam sons divertidos.",
+    "ctaNew": "Começar",
+    "ctaTrending": "Sons em tendência"
+  },
+  "soundboard": {
+    "sounds": "sons",
+    "noSounds": "Ainda não há sons neste painel",
+    "addToFavorites": "Adicionar aos favoritos",
+    "removeFromFavorites": "Remover dos favoritos",
+    "addToSoundboard": "Adicionar ao meu painel",
+    "playCount": "reproduções"
+  },
+  "favorites": {
+    "title": "Meus Favoritos",
+    "empty": "Sem favoritos ainda",
+    "emptyDescription": "Clique no ícone de coração em qualquer som para adicioná-lo aos seus favoritos"
+  },
+  "mySoundboards": {
+    "title": "Meus Painéis",
+    "create": "Criar Painel",
+    "createTitle": "Criar Novo Painel",
+    "namePlaceholder": "Digite o nome do painel",
+    "empty": "Sem painéis ainda",
+    "emptyDescription": "Crie seu próprio painel com seus sons favoritos",
+    "delete": "Excluir",
+    "edit": "Editar"
+  },
+  "trending": {
+    "h1": "Soundboard em Alta: Botões de Som Mais Populares",
+    "shortDescription": "Explore botões de som em alta e coleções de mesas de memes sonoros desbloqueadas.",
+    "empty": "Nenhum som em tendência disponível ainda"
+  },
+  "new": {
+    "h1": "Novo Soundboard: Últimos Botões de Som",
+    "shortDescription": "Confira os botões de som recém-adicionados e coleções de mesas de memes sonoros desbloqueadas.",
+    "empty": "Nenhum som novo disponível ainda"
+  },
+  "categories": {
+    "meme": "Meme",
+    "reaction": "Reação",
+    "games": "Jogos",
+    "movies": "Filmes",
+    "anime-manga": "Anime & Mangá",
+    "prank": "Pegadinha",
+    "tiktok-trends": "Tendências do TikTok",
+    "creativity": "Criatividade",
+    "politics": "Política",
+    "sound-effects": "Efeitos Sonoros"
+  },
+  "footer": {
+    "copyright": "soundboardunblocked",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "contact": "Contato",
+    "about": "Sobre",
+    "dmca": "DMCA",
+    "disclaimer": "Aviso Legal"
+  },
+  "meta": {
+  "title": "Soundboard Desbloqueado: Jogue com Memes Sonoros e Botões de Som",
+  "description": "Reproduza e baixe milhares de botões de som, mesa de memes sonoros, sons de pegadinha, botões de memes e efeitos sonoros instantaneamente no soundboard desbloqueado."
+  },
+  "soundDetail": {
+    "addToSoundboard": "Adicionar ao meu painel",
+    "addedToSoundboard": "Adicionado ao painel",
+    "removedFromSoundboard": "Removido do painel",
+    "getRingtone": "Obter Toque",
+    "downloadMp3": "Baixar MP3",
+    "notificationSound": "Som de Notificação",
+    "socialMediaSharing": "Compartilhamento em Redes Sociais",
+    "usersFavorited": "usuários adicionaram este botão de som aos favoritos",
+    "viewed": "visualizaram este botão de som",
+    "played": "reproduziram este botão de som",
+    "youMightAlsoLike": "Você Também Pode Gostar",
+    "exploreMore": "Explorar Mais Sons de",
+    "addedToFavorites": "Adicionado aos favoritos!",
+    "removedFromFavorites": "Removido dos favoritos!"
+  },
+  "loadMore": {
+    "button": "Carregar Mais",
+    "loading": "Carregando..."
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Registrar",
+    "email": "E-mail",
+    "password": "Senha",
+    "confirmPassword": "Confirmar Senha",
+    "forgotPassword": "Esqueceu a senha?",
+    "noAccount": "Não tem uma conta?",
+    "hasAccount": "Já tem uma conta?",
+    "signUp": "Inscrever-se",
+    "signIn": "Entrar",
+    "loggingIn": "Entrando...",
+    "signingUp": "Inscrevendo-se..."
+  },
+  "upload": {
+    "title": "Enviar Som",
+    "description": "Compartilhe seu botão de som favorito com a comunidade",
+    "soundName": "Nome do Som",
+    "soundFile": "Arquivo de Som",
+    "category": "Categoria",
+    "selectCategory": "Selecionar Categoria",
+    "uploadButton": "Enviar Som",
+    "uploading": "Enviando...",
+    "success": "Som enviado com sucesso!",
+    "error": "Falha ao enviar som"
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Entre em contato conosco para perguntas ou feedback"
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "description": "Nossa política de privacidade e como lidamos com seus dados"
+  },
+  "terms": {
+    "title": "Termos e Condições",
+    "description": "Termos de serviço para usar soundboardunblocked"
+  },
+  "dmca": {
+    "title": "DMCA",
+    "description": "Política de direitos autorais e procedimentos de notificação"
+  },
+  "disclaimer": {
+    "title": "Aviso Legal",
+    "description": "Aviso legal e isenções de responsabilidade"
+  }
+}
+
+

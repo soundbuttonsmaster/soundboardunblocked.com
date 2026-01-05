@@ -1,0 +1,223 @@
+{
+  "common": {
+    "play": "재생",
+    "pause": "일시정지",
+    "search": "검색",
+    "searchResults": "검색 결과",
+    "metaTitle": "{Search Name} 음향 효과 버튼",
+    "metaDescription": "밈 사운드보드용 {Search Name} 음향 효과 버튼을 발견하세요! 차단 해제된 사운드 버튼, 음향 효과 및 바이럴 콘텐츠 제작에 완벽합니다.",
+    "h1": "{Search Name} 음향 효과 버튼",
+    "loading": "로딩 중...",
+    "error": "문제가 발생했습니다",
+    "noResults": "결과를 찾을 수 없습니다",
+    "favorites": "즐겨찾기",
+    "mySoundboards": "내 사운드보드",
+    "allSounds": "모든 사운드",
+    "share": "공유",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "seeAll": "모두 보기",
+    "home": "홈",
+    "showing": "표시 중",
+    "of": "/",
+    "sounds": "사운드"
+  },
+  "nav": {
+    "home": "홈",
+    "new": "신규",
+    "trending": "트렌딩",
+    "categories": "카테고리",
+    "soundboards": "사운드보드",
+    "pages": "페이지",
+    "about": "회사 소개",
+    "contact": "문의하기",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "dmca": "DMCA",
+    "disclaimer": "면책조항"
+  },
+  "categories": {
+    "meme": "밈",
+    "reaction": "리액션",
+    "games": "게임",
+    "movies": "영화",
+    "animeManga": "애니메이션 & 만화",
+    "prank": "장난",
+    "tiktokTrends": "틱톡 트렌드",
+    "creativity": "창의성",
+    "politics": "정치",
+    "soundEffects": "효과음"
+  },
+  "auth": {
+    "login": "로그인",
+    "register": "회원가입",
+    "logout": "로그아웃",
+    "email": "이메일",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "username": "사용자명",
+    "fullName": "이름",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "signUp": "가입하기",
+    "signIn": "로그인",
+    "signUpNow": "지금 가입하세요",
+    "loginNow": "지금 로그인하세요"
+  },
+  "upload": {
+    "title": "사운드 업로드",
+    "description": "컬렉션에 새로운 사운드를 업로드하세요",
+    "soundName": "사운드 이름",
+    "soundFile": "사운드 파일",
+    "category": "카테고리",
+    "selectCategory": "카테고리 선택",
+    "uploadButton": "업로드",
+    "uploading": "업로드 중...",
+    "success": "사운드가 성공적으로 업로드되었습니다!",
+    "error": "업로드에 실패했습니다"
+  },
+  "home": {
+    "title": "사운드보드 차단 해제: 사운드 버튼 및 밈 사운드보드에 즉시 액세스",
+    "subtitle": "사운드보드 차단 해제는 밈 사운드보드, 사운드 버튼, 장난 소리 및 음향 효과의 방대한 컬렉션을 제공합니다. 스마트폰, 데스크탑 또는 태블릿에서 자신만의 사운드보드를 만들 수도 있습니다.",
+    "searchPlaceholder": "사운드 검색...",
+    "popularSounds": "인기 사운드",
+    "browseSoundboards": "사운드보드 둘러보기",
+    "trending": "사운드 버튼: 트렌딩",
+    "newSounds": "사운드 버튼: 신규",
+    "exploreTrending": "더 많은 트렌딩 사운드 살펴보기",
+    "exploreNew": "더 많은 신규 사운드 살펴보기",
+    "aboutTitle": "사운드보드 언블록드: 즉시 재생, 다운로드 및 사운드 버튼 만들기",
+    "aboutDescription": "사운드보드 언블록드에 오신 것을 환영합니다! 모든 클릭은 새로운 사운드를 엽니다. 크리에이터, 게이머, 그리고 일반 사용자를 위해 제작된 방대한 사운드 버튼, 밈 사운드보드, 장난 사운드 및 음향 효과 라이브러리를 살펴보세요.",
+    "whoBenefits": "사운드보드 차단 해제란 무엇입니까?",
+    "whoBenefitsDesc": "Soundboard Unblocked는 소리가 있는 웹사이트입니다. 학교나 집에서 인터넷으로 사용할 수 있습니다. 다운로드하지 않고도 사운드를 재생할 수 있습니다.",
+    "whyChoose": "왜 그것을 사용합니까?",
+    "whyChooseDesc": " 쉽고 재미있습니다.설치가 필요하지 않습니다. 휴대폰, 컴퓨터, Chromebook에서 작동합니다. 새로운 소리가 자주 추가됩니다. 새로운 인기 사운드가 계속 추가됩니다. 원할 경우 어린이용, 광고용, 또는 더 짧은 한 줄을 소개할 수도 있습니다",
+    "exploreCollection": "다양한 최고의 사운드 버튼을 둘러보세요.",
+    "exploreCollectionDesc": " 다양한 사운드 버튼을 찾고 계신다면, 저희 사이트에서 편리하게 정리된 카테고리를 통해 원하는 사운드를 쉽게 찾을 수 있습니다. 밈 사운드보드에는 오래된 \"Bruh\" 밈부터 최신 유행 밈까지 다양한 밈 사운드가 있습니다! 재미있는 소리로 친구에게 장난을 치고 싶으신가요? 다양한 재미있는 사운드 버튼도 제공합니다. 게이머라면 Discord 반응이나 스트림 알림에 사용할 수 있는 최고의 에픽 사운드 효과 모음을 좋아하실 겁니다!그런 사운드도 준비되어 있습니다. 게이머들은 Discord 반응이나 스트림 알림에 사용하기 좋은 멋진 음향 효과 컬렉션을 좋아할 것입니다.",
+    "exploreCategoriesTitle": "사운드보드 카테고리를 살펴보세요.",
+    "exploreCategoriesIntro": " 체계적으로 정리된 사운드보드 카테고리를 통해 몇 초 만에 원하는 사운드를 찾을 수 있습니다.",
+    "memesCategory": " 밈",
+    "memesCategoryDesc": "인터넷에서 가장 재미있는 것들의 인기 있는 오디오 클립과 바이럴 밈 사운드.",
+    "pranksCategory": " 장난",
+    "pranksCategoryDesc": "친구들을 웃게 만들고 농담하기에 좋은 재미있고 안전한 장난.",
+    "soundEffectsCategory": " 음향 효과",
+    "soundEffectsCategoryDesc": " 비디오, 스트림 및 기타 창의적인 프로젝트를 위한 오래되고 새로운 음향 효과.",
+    "gamesCategory": " 게이밍",
+    "gamesCategoryDesc": " 스트리머와 게이머를 위한 인기 있는 게임 사운드, 반응 및 효과.",
+    "reactionCategory": "리액션",
+    "reactionCategoryDesc": "비디오, 채팅 및 순간을 더 재미있게 만드는 빠른 반응 사운드.",
+    "moviesCategory": "영화",
+    "moviesCategoryDesc": "밈과 비디오를 위한 상징적인 영화 사운드, 유명한 인용문 및 인기 영화의 음향 효과.",
+    "createSoundboardTitle": "나만의 커스텀 사운드보드 만들기",
+    "createSoundboardDesc": " 사운드보드 언블록드를 사용하면 듣고 자신만의 사운드를 만들 수 있습니다. 스마트폰, 데스크톱 또는 태블릿에서 바로 자신만의 사운드보드를 만드세요. 좋아하는 오디오 클립을 업로드하고, 버튼에 넣고, 원할 때마다 재생할 수 있습니다.",
+    "perfectOccasionTitle": " 모든 이벤트에 완벽",
+    "perfectOccasionDesc1": " 우리의 사운드보드는 YouTube 비디오, TikTok 또는 Twitch 스트림을 만드는 사람들에게 최고의 도구입니다. 게이머들은 Discord에서 대화하고 게임에서 반응하기 위해 우리의 사운드 버튼을 사용하는 것을 좋아합니다.",
+    "perfectOccasionDesc2": "학생들은 재미있는 휴식을 위해 우리 플랫폼을 사용하며, 빠르고 재미있는 반응을 찾는 사람은 필요한 것을 정확히 찾을 수 있습니다. 진지한 콘텐츠 제작부터 캐주얼 엔터테인먼트까지 모든 순간에 사운드가 있습니다.",
+    "faqTitle": "자주 묻는 질문",
+    "faq1Question": "사운드보드 언블록드는 무료로 사용할 수 있습니까?",
+    "faq1Answer": "네, Soundboard Unblocked는 무료로 사용할 수 있습니다.",
+    "faq2Question": "학교 에서 이 사운드보드 언블록드를 사용할 수 있습니까?",
+    "faq2Answer": "예! 우리의 사운드보드 언블록드는 학교 및 네트워크에서 완벽하게 작동합니다.",
+    "faq3Question": "밈 사운드보드에 새로운 사운드를 얼마나 자주 추가하나요?",
+    "faq3Answer": "TikTok의 트렌드 사운드, 바이럴 밈, 대중문화에서 가져온 콘텐츠로 밈 사운드보드를 매일 업데이트합니다. 항상 새로운 콘텐츠를 찾아볼 수 있습니다.",
+    "ctaTitle": "시작하기",
+    "ctaDesc": "사운드보드 언블록드를 사용하는 사용자가 수백만 명입니다. 자신만의 사운드보드를 만들고, 새로운 사운드를 살펴보고, 재미있는 사운드를 공유하는 사람들과 연결하세요.",
+    "ctaNew": "시작하기",
+    "ctaTrending": "인기 사운드"
+  },
+  "soundboard": {
+    "sounds": "사운드",
+    "noSounds": "이 사운드보드에 아직 사운드가 없습니다",
+    "addToFavorites": "즐겨찾기에 추가",
+    "removeFromFavorites": "즐겨찾기에서 제거",
+    "addToSoundboard": "내 사운드보드에 추가",
+    "playCount": "재생"
+  },
+  "favorites": {
+    "title": "내 즐겨찾기",
+    "empty": "아직 즐겨찾기가 없습니다",
+    "emptyDescription": "사운드의 하트 아이콘을 클릭하여 즐겨찾기에 추가하세요"
+  },
+  "mySoundboards": {
+    "title": "내 사운드보드",
+    "create": "사운드보드 만들기",
+    "createTitle": "새 사운드보드 만들기",
+    "namePlaceholder": "사운드보드 이름 입력",
+    "empty": "아직 사운드보드가 없습니다",
+    "emptyDescription": "좋아하는 사운드로 나만의 사운드보드를 만드세요",
+    "delete": "삭제",
+    "edit": "편집"
+  },
+  "trending": {
+    "h1": "인기 사운드보드: 가장 인기 있는 사운드 버튼",
+    "shortDescription": "인기 사운드 버튼 및 밈 사운드보드 차단 해제 컬렉션을 탐색하세요.",
+    "empty": "아직 트렌딩 사운드를 사용할 수 없습니다"
+  },
+  "new": {
+    "h1": "새로운 사운드보드: 최신 사운드 버튼",
+    "shortDescription": "새로 추가된 사운드 버튼 및 밈 사운드보드 차단 해제 컬렉션을 확인하세요.",
+    "empty": "아직 신규 사운드를 사용할 수 없습니다"
+  },
+  "pages": {
+    "about": {
+      "title": "회사 소개",
+      "description": "사운드 버튼 맥스와 우리의 사명에 대해 알아보세요"
+    },
+    "contact": {
+      "title": "문의하기",
+      "description": "궁금한 점이 있으시거나 도움이 필요하시면 연락 주세요"
+    },
+    "privacy": {
+      "title": "개인정보처리방침",
+      "description": "귀하의 데이터를 수집, 사용 및 보호하는 방법을 알아보세요"
+    },
+    "terms": {
+      "title": "이용약관",
+      "description": "서비스 이용에 대한 조건을 읽어보세요"
+    },
+    "dmca": {
+      "title": "DMCA",
+      "description": "저작권 정책 및 DMCA 통지 절차"
+    },
+    "disclaimer": {
+      "title": "면책조항",
+      "description": "법적 고지 및 면책조항"
+    }
+  },
+  "footer": {
+    "copyright": "사운드 버튼 맥스",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "contact": "문의",
+    "about": "회사 소개",
+    "dmca": "DMCA",
+    "disclaimer": "면책조항"
+  },
+  "meta": {
+  "title": "사운드보드 차단 해제: 밈 사운드보드 및 사운드 버튼 플레이",
+  "description": "사운드보드 차단 해제에서 수천 개의 사운드 버튼, 밈 사운드보드, 장난 소리, 밈 버튼, 음향 효과를 즉시 재생하고 다운로드하세요."
+  },
+  "soundDetail": {
+    "addToSoundboard": "내 사운드보드에 추가",
+    "getRingtone": "벨소리 받기",
+    "downloadMp3": "MP3 다운로드",
+    "notificationSound": "알림음",
+    "socialMediaSharing": "소셜 미디어 공유",
+    "usersFavorited": "명의 사용자가 이 사운드 버튼을 즐겨찾기에 추가했습니다",
+    "viewed": "명이 이 사운드 버튼을 조회했습니다",
+    "played": "명이 이 사운드 버튼을 재생했습니다",
+    "youMightAlsoLike": "추천",
+    "exploreMore": "더 많은 사운드 살펴보기",
+    "addedToFavorites": "즐겨찾기에 추가되었습니다!",
+    "removedFromFavorites": "즐겨찾기에서 제거되었습니다!",
+    "addedToSoundboard": "내 사운드보드에 추가되었습니다",
+    "removedFromSoundboard": "내 사운드보드에서 제거되었습니다"
+  },
+  "loadMore": {
+    "button": "더 보기",
+    "loading": "로딩 중..."
+  }
+}
+
+
