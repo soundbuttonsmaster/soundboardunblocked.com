@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "soundboardunblocked",
   },
+  other: {
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+  },
   icons: {
     icon: [
       {
@@ -89,6 +94,11 @@ export default function RootLayout({
         />
         <link rel="dns-prefetch" href="https://vercel.live" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#ef4444" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="soundboardunblocked" />
       </head>
       <body className="antialiased">
         <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-9CLG9GS1LT" />

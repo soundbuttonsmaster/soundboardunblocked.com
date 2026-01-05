@@ -1,10 +1,19 @@
 // Service Worker for Soundboard Unblocked PWA
-const CACHE_NAME = "soundboardunblocked-v2"
-const STATIC_CACHE = "static-v2"
-const DYNAMIC_CACHE = "dynamic-v2"
+const CACHE_NAME = "soundboardunblocked-v3"
+const STATIC_CACHE = "static-v3"
+const DYNAMIC_CACHE = "dynamic-v3"
 
 // Static assets to cache on install
-const STATIC_ASSETS = ["/", "/favicon.ico", "/og-image.jpg", "/apple-touch-icon.jpg", "/manifest.json"]
+const STATIC_ASSETS = [
+  "/",
+  "/favicon.ico",
+  "/og-image.jpg",
+  "/apple-touch-icon.png",
+  "/apple-touch-icon.jpg",
+  "/icon-192x192.png",
+  "/icon-512x512.png",
+  "/manifest.json"
+]
 
 // Install event - cache static assets
 self.addEventListener("install", (event) => {

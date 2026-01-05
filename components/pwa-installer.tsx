@@ -14,18 +14,28 @@ export function PWAInstaller() {
   const [showInstallPrompt, setShowInstallPrompt] = useState(false)
 
   useEffect(() => {
-    // Register service worker
+    // Register service worker immediately
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/sw.js")
-          .then((registration) => {
-            console.log("[PWA] Service Worker registered:", registration)
+      navigator.serviceWorker
+        .register("/sw.js", { scope: "/" })
+        .then((registration) => {
+          console.log("[PWA] Service Worker registered:", registration)
+          
+          // Check for updates
+          registration.addEventListener("updatefound", () => {
+            const newWorker = registration.installing
+            if (newWorker) {
+              newWorker.addEventListener("statechange", () => {
+                if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                  console.log("[PWA] New service worker available")
+                }
+              })
+            }
           })
-          .catch((error) => {
-            console.log("[PWA] Service Worker registration failed:", error)
-          })
-      })
+        })
+        .catch((error) => {
+          console.error("[PWA] Service Worker registration failed:", error)
+        })
     }
 
     // Listen for install prompt
