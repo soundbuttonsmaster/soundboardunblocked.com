@@ -177,7 +177,7 @@ const SoundButton = memo(function SoundButton({
 
   const handlePlay = useCallback(() => {
     const audioUrl = resolveMediaUrl(sound.sound_file);
-    console.log("Playing sound:", sound.name, "URL:", audioUrl);
+    // console.log("Playing sound:", sound.name, "URL:", audioUrl);
     if (!audioUrl) {
       console.error("No audio URL found for sound:", sound);
       return;
