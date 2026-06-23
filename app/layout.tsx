@@ -91,9 +91,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://play.soundboard.cloud" />
+        <link rel="dns-prefetch" href="https://play-v1.soundboard.cloud" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://play.soundboard.cloud" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://play-v1.soundboard.cloud" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ef4444" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
