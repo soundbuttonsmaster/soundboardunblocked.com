@@ -1,4 +1,5 @@
 import { API_BASE_URL } from "./constants"
+export const MEDIA_BASE_URL = process.env.NEXT_PUBLIC_MEDIA_BASE_URL || "https://play-v1.soundboard.cloud/media";
 
 export interface ApiResponse<T> {
   status: number
@@ -418,13 +419,7 @@ class ApiClient {
     })
   }
 
-  getSoundAudioUrl(id: number): string {
-    return `${this.baseUrl}/sounds/${id}/audio`
-  }
 
-  getSoundDownloadUrl(id: number): string {
-    return `${this.baseUrl}/sounds/${id}/audio?download=true`
-  }
 
   // ==================== Categories ====================
 
@@ -456,13 +451,7 @@ class ApiClient {
     return this.request<Blog>(`/user/blogs/${id}`)
   }
 
-  getBlogImageUrl(id: number): string {
-    return `${this.baseUrl}/user/blogs/${id}/image`
-  }
 
-  getBlogImageDownloadUrl(id: number): string {
-    return `${this.baseUrl}/user/blogs/${id}/image?download=true`
-  }
 }
 
 // Export singleton instance

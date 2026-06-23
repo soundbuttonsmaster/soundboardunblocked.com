@@ -12,6 +12,7 @@ import DottedBackground from "@/components/ui/dotted-background";
 import { getColorHex } from "@/lib/constants/colors";
 import { getSoundUrl } from "@/lib/utils/slug";
 import { apiClient } from "@/lib/api/client";
+import { resolveMediaUrl } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { ShareDialog } from "@/components/sound/share-dialog";
 
@@ -121,8 +122,11 @@ export default function SoundDetailClient({
     e.stopPropagation();
     setIsDownloading(true);
     try {
-      // Use proxy API route to avoid CORS issues
-      const downloadUrl = `/api/sounds/${sound.id}/download`;
+      // Use direct media URL download
+      const downloadUrl = resolveMediaUrl(sound.sound_file);
+      if (!downloadUrl) {
+        throw new Error("No download URL found");
+      }
       const response = await fetch(downloadUrl);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -151,8 +155,9 @@ export default function SoundDetailClient({
 
   const handleRingtone = () => {
     try {
-      const downloadUrl = apiClient.getSoundDownloadUrl(sound.id);
-      console.log("[SoundDetail] Using API ringtone URL:", downloadUrl);
+      const downloadUrl = resolveMediaUrl(sound.sound_file);
+      if (!downloadUrl) throw new Error("No download URL found");
+      console.log("[SoundDetail] Using ringtone URL:", downloadUrl);
       const a = document.createElement("a");
       a.href = downloadUrl;
       a.download = `${sound.name}-ringtone.mp3`;
@@ -168,8 +173,9 @@ export default function SoundDetailClient({
 
   const handleNotification = () => {
     try {
-      const downloadUrl = apiClient.getSoundDownloadUrl(sound.id);
-      console.log("[SoundDetail] Using API notification URL:", downloadUrl);
+      const downloadUrl = resolveMediaUrl(sound.sound_file);
+      if (!downloadUrl) throw new Error("No download URL found");
+      console.log("[SoundDetail] Using notification URL:", downloadUrl);
       const a = document.createElement("a");
       a.href = downloadUrl;
       a.download = `${sound.name}-notification.mp3`;
@@ -245,7 +251,7 @@ export default function SoundDetailClient({
     }
   };
 
-  const audioUrl = apiClient.getSoundAudioUrl(sound.id);
+  const audioUrl = resolveMediaUrl(sound.sound_file) || "";
 
   const jsonLd = {
     "@context": "https://schema.org",

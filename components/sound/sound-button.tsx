@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useRef, useCallback, memo, useMemo } from "react";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, resolveMediaUrl } from "@/lib/utils";
 import { useFavorites } from "@/contexts/favorites-context";
 import type { Sound } from "@/lib/api/client";
 import type { Locale } from "@/lib/i18n/config";
@@ -176,7 +176,12 @@ const SoundButton = memo(function SoundButton({
   ), [color1, color2, isPressed]);
 
   const handlePlay = useCallback(() => {
-    const audioUrl = apiClient.getSoundAudioUrl(sound.id);
+    const audioUrl = resolveMediaUrl(sound.sound_file);
+    console.log("Playing sound:", sound.name, "URL:", audioUrl);
+    if (!audioUrl) {
+      console.error("No audio URL found for sound:", sound);
+      return;
+    }
     // Stop any currently playing sound
     if (currentAudio && currentAudio !== audioRef.current) {
       currentAudio.pause();
@@ -205,7 +210,7 @@ const SoundButton = memo(function SoundButton({
     }
 
     audioRef.current.currentTime = 0;
-    console.log("Attempting to play audio:", audioUrl); // Added console.log here
+    // console.log("Attempting to play audio:", audioUrl); // Added console.log here
     audioRef.current
       .play()
       .then(() => {
@@ -253,8 +258,11 @@ const SoundButton = memo(function SoundButton({
     e.stopPropagation();
     setIsDownloading(true);
     try {
-      // Use proxy API route to avoid CORS issues
-      const downloadUrl = `/api/sounds/${sound.id}/download`;
+      // Use direct media URL download
+      const downloadUrl = resolveMediaUrl(sound.sound_file);
+      if (!downloadUrl) {
+        throw new Error("No download URL found");
+      }
       const response = await fetch(downloadUrl);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
